@@ -96,7 +96,7 @@ var name = "Shaurya";
 alert(message + " " + name + "!");
 
 Output: Hello Shaurya!
-/*
+*/
 
 
 
