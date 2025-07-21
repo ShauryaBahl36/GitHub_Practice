@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #addBtn { display: none; margin-top: 10px;}
+    </style>
+</head>
+<body>
+    <input type="text" id="Search" onkeyup="myFunction()" placeholder="Search...">
+    <button id="addBtn" onclick="addItem()">Add Item</button>
+    <ul id="SearchItems">
+        <li><a href="#">Apple</a></li>
+        <li><a href="#">Banana</a></li>
+        <li><a href="#">Cherry</a></li>
+        <li><a href="#">Date</a></li>
+        <li><a href="#">Elderberry</a></li>
+        <li><a href="#">Fig</a></li>
+        <li><a href="#">Grape</a></li>
+        <li><a href="#">Honeydew</a></li>
+    </ul>
+    <!-- <script>
+        function myFunction() {
+            const input = document.getElementById('Search');
+            const filter = input.value.toLowerCase();
+            const ul = document.getElementById('SearchItems');
+            const li = ul.getElementsByTagName('li');
+
+            for (let i = 0; i < li.length; i++) {
+                const a = li[i].getElementsByTagName("a")[0];
+                const txtValue = a.textContent || a.innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+    </script> -->
+    <script>
+        const defaultItems = [
+            "Apple", "Banana", "Cherry", "Date",
+            "Elderberry", "Fig", "Grape", "Honeydew"
+        ];
+        function getItems() {
+            const saved = localStorage.getItem('searchItems');
+            return saved ? JSON.parse(saved) : defaultItems.slice();
+        }
+        function setItems(items) {
+            localStorage.setItem('searchItems', JSON.stringify(items));
+        }
+
+        function renderList(items) {
+            const ul = document.getElementById('SearchItems');
+            ul.innerHTML = '';
+            items.forEach(item => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = "#";
+                a.textContent = item;
+                li.appendChild(a);
+                ul.appendChild(li);
+            });
+        }
+
+        function myFunction() {
+            const input = document.getElementById('Search');
+            const filter = input.value.toLowerCase();
+            const ul = document.getElementById('SearchItems');
+            const items = getItems();
+            let matchCount = 0;
+
+            ul.innerHTML = '';
+            items.forEach(item => {
+                if (item.toLowerCase().indexOf(filter) > -1) {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = "#";
+                    a.textContent = item;
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                    matchCount++;
+                }
+            });
+
+            // Show add button if no matches
+            const addBtn = document.getElementById('addBtn');
+            if (filter && matchCount === 0) {
+                addBtn.style.display = 'inline-block';
+                addBtn.textContent = `Add "${input.value}"`;
+            } else {
+                addBtn.style.display = 'none';
+            }
+        }
+
+        function addItem() {
+            const input = document.getElementById('Search');
+            const value = input.value.trim();
+            if (!value) return;
+            let items = getItems();
+            if (!items.includes(value)) {
+                items.push(value);
+                setItems(items);
+                renderList(items);
+                input.value = '';
+                document.getElementById('addBtn').style.display = 'none';
+            }
+        }
+
+        // On page load
+        window.onload = function() {
+            renderList(getItems());
+        };
+    </script>
+</body>
+</html>
