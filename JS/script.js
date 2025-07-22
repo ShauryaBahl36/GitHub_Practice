@@ -150,6 +150,77 @@ x -= 3; // x is now 4
 
 */
 
+/* Functions:
+Functions allow you to create series of instructions, package it into a block 
+of code and remember packaging reusable blocks of code that can be called multiple 
+times throughout your program. For eg:-
+Creating the function looks like this:
+function function_name() {
+    // code to be executed
+}
+
+while, calling the function looks like this:
+function_name();
+
+Difference between alert and console.log is that alert is something that the user
+can see on the screen, while console.log is something that the developer can see 
+in the console to debug the code, to find out if there were any problems, and to
+essentially print out parts of the code into the console.
+
+For understanding functions() in a better, go to this link: "https://web.stanford.edu/~cpiech/karel/ide.html"
+
+Eg 1 to try out:- Bring Robot from bottom left corner to top right corner of the screen.
+Solution:
+function main(){
+   goStraight();
+   goLeft();
+   goStraight();
+}
+
+function goStraight() {
+   move();
+   move();
+   move();
+   move();
+}
+
+function goLeft() {
+   turnLeft();
+}
+
+Eg 2 to try out: Putting Beepers Diagonally and move robot from bottom left to top right corner.
+Solution:
+function main(){
+   Beepers();
+   goLeft();
+   Beepers();
+   goRight();
+   Beepers();
+   goLeft();
+   Beepers();
+   goRight();
+   LastBeeper();
+}
+
+function Beepers() {
+   putBeeper();
+   move();
+}
+
+function LastBeeper() {
+   putBeeper();
+}
+
+function goLeft() {
+   turnLeft();
+   move();
+}
+
+function goRight() {
+   turnRight();
+   move();
+}
+*/
 
 let i='a';
 switch(i){
