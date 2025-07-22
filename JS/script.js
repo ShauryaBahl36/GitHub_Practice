@@ -98,6 +98,35 @@ alert(message + " " + name + "!");
 Output: Hello Shaurya!
 */
 
+/* String Length and Retrieving no of Characters:-
+variable_name.length gives us the length of the string, which is the number of characters in it.
+
+var len = 30;
+var message = prompt("Enter the string: ")
+alert("You have entered "+ message.length + " characters, you have "+ (len - message.length) + " characters remaining");
+
+*/
+
+/* Slice Method in Strings:
+Slice method basically allows us to slice your strings to separate them into individual characters.
+variable_name.slice(x,y), here we give tow numbers, the starting position and the ending position.
+
+var message = prompt("Enter the string: ")
+var limit = message.slice(0, 20);
+alert(limit);
+*/
+
+/* ToUpperCase and ToLowerCase Methods:
+variable_name.toUpperCase() converts the string to uppercase, and variable_name.toLowerCase() converts the string to
+lowercase.
+
+var name = prompt("What is your name?");
+name1upper = name.slice(0,1).toUpperCase();
+name2lower = name.slice(1,name.length).toLowerCase();
+alert("Hello, "+ (name1upper+name2lower));
+
+*/
+
 
 
 let i='a';
