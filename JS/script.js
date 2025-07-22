@@ -127,6 +127,28 @@ alert("Hello, "+ (name1upper+name2lower));
 
 */
 
+/*
+Basic Arithmetic Operations:
+Modulo operator is used to find the remainder of a division operation. it is represented by %.
+Note: be careful with the order of operations, as it can affect the result of your calculations.
+
+var dogAge = prompt("Enter the age of the dog.")
+var humanAge = (dogAge - 2) * 4 + 21;
+alert("Your dog is "+ humanAge + " years old in human years");
+*/
+
+/*
+Increment and Decrement Operators:
+Increment operator (++) increases the value of a variable by 1, and 
+Decrement operator (--) decreases the value of a variable by 1. For eg:-
+
+var x = 5;
+x++; // x is now 6
+x--; // x is now 5 again
+x += 2; // x is now 7
+x -= 3; // x is now 4
+
+*/
 
 
 let i='a';
