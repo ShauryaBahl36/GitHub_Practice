@@ -222,6 +222,57 @@ function goRight() {
 }
 */
 
+/* ChessBoard Pattern:
+
+function main(){
+   oddBeepers();
+   goLeft();
+   evenBeepers();
+   goRight();
+   oddBeepers();
+   goLeft();
+   evenBeepers();
+   goRight();
+   oddBeepers();
+}
+
+function oddBeepers() {
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+}
+
+function evenBeepers() {
+   move();
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+   move();
+}
+
+function LastBeeper() {
+   putBeeper();
+}
+
+function goLeft() {
+   turnLeft();
+   move();
+   turnLeft();
+}
+
+function goRight() {
+   turnRight();
+   move();
+   turnRight();
+}
+
+*/
+
 let i='a';
 switch(i){
     case 'a':
