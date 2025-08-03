@@ -31,9 +31,26 @@ body {
   margin-top: 60px;
 }
 
-.reset-score-button,
-.auto-play-button {
+.reset-score-button {
   background-color: white;
+  border: none;
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.auto-play-button {
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.auto-play-on {
+  background-color: green;
+  color: white;
   border: none;
   font-size: 15px;
   padding: 8px 15px;

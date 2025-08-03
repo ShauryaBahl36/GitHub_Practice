@@ -18,15 +18,20 @@ updateScoreElement();
 let intervalId;
 
 function autoPlay() {
-  if (!isAutoPlaying) {
-      intervalId = setInterval(function() {
+  const autoPlayButton = document.querySelector(".js-auto-play-button");
+  if (!isAutoPlaying && autoPlayButton.innerText === 'Auto Play OFF') {
+      intervalId = setInterval(() => {
         const playerMove = pickComputerMove();
         playGame(playerMove);
       }, 1000);
+      autoPlayButton.innerHTML = 'Auto Play ON';
+      autoPlayButton.classList.add("auto-play-on");
       isAutoPlaying = true;
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    autoPlayButton.innerHTML = 'Auto Play OFF';
+    autoPlayButton.classList.remove("auto-play-on");
   }
 }
 

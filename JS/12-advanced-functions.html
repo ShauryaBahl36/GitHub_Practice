@@ -64,14 +64,53 @@
        console.log('next line 2');
        */
 
+       // forEach() without arrow Function
        [
         'make dinner',
         'wash dishes',
         'watch youtube'
        ].forEach(function(value, index) {
+        if (value === 'wash dishes') {
+            return; // Does the same thing as continue
+        }
         console.log(index);
         console.log(value);
-       }, 3000); // forEach() is the preferred way to loop through an array.
+       }); // forEach() is the preferred way to loop through an array.
+
+       
+       // forEach() with arrow function.
+       [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+       ].forEach((value, index) => {
+        if (value === 'wash dishes') {
+            return; // Does the same thing as continue
+        }
+        console.log(index);
+        console.log(value);
+       });
+
+       const regularFunction = function(param, param2) {
+        console.log('hello');
+        return 5;
+       };
+
+
+       const arrowFunction = (param, param2) => {
+        console.log('hello');
+        return 5;
+       };
+       arrowFunction();
+
+       const oneParam = param => {
+        console.log(param + 1);
+       };
+       oneParam(2);
+
+       const oneLine = () => 2 + 3;
+
+       console.log(oneLine());
 
     </script>
   </body>
